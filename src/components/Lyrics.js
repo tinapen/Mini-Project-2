@@ -12,15 +12,17 @@ export const Lyrics = () => {
       );
 
       const lyricsData = await response.json();
+
       console.log(lyricsData);
       setLyrics(lyricsData.lyrics);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   return (
     <>
       <section>
@@ -67,7 +69,14 @@ export const Lyrics = () => {
             Search
           </button>
         </form>
-        <pre>{lyrics}</pre>
+
+        <div className="text-center">
+          {lyrics.split("\n").map((lyric) => (
+            <div>
+              {lyric} <br />
+            </div>
+          ))}
+        </div>
       </section>
     </>
   );
