@@ -40,7 +40,7 @@ export const Search = ({
     <>
       <section className="mt-16 pb-5 dark:bg-gray-900">
         <h1 className=" text-4xl text-center font-bold text-gray-900 dark:text-white my-5">
-          Search song lyrics
+          Search Song lyrics
         </h1>
 
         <form

@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
+import axios from "axios";
+import Image from "../assets/Artist_Backdrop.png";
 
 export const Artist = ({ artistName }) => {
   const [artistInfoName, setArtistInfoName] = useState("");
@@ -35,6 +36,7 @@ export const Artist = ({ artistName }) => {
       //   console.log(artistImage);
     } catch (error) {
       console.error(error);
+      setArtistImage(Image);
     }
   };
   useEffect(() => {
