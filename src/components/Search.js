@@ -1,22 +1,26 @@
-import { useState } from "react";
-
-export const Search = ({ setTrack, setSongby, setLyrics }) => {
-  const [artistName, setArtistName] = useState("");
-  const [songTitle, setSongTitle] = useState("");
+import Axios from "axios";
+export const Search = ({
+  artistName,
+  setArtistName,
+  songTitle,
+  setSongTitle,
+  setTrack,
+  setSongby,
+  setLyrics,
+}) => {
   const searchLyrics = async () => {
     try {
-      const response = await fetch(
+      const response = await Axios.get(
         `https://api.lyrics.ovh/v1/${artistName}/${songTitle}`
       );
       console.log(response);
-      const lyricsData = await response.json();
 
       setTrack(songTitle);
-      setSongby(`Song by ${artistName}`);
-      setLyrics(lyricsData.lyrics);
+      setSongby(`Song by: ${artistName}`);
+      setLyrics(response.data.lyrics);
     } catch {
       setLyrics(
-        `Sorry, lyrics for ${songTitle}, song by ${artistName} is unavailable. Also, check if the track and artist are match.`
+        `No Lyrics Found \n Sorry, lyrics for ${songTitle}, song by ${artistName} is unavailable. Also, check if the title and artist are correct.`
       );
     }
   };
@@ -34,8 +38,8 @@ export const Search = ({ setTrack, setSongby, setLyrics }) => {
   };
   return (
     <>
-      <section className="mt-20">
-        <h1 className=" text-4xl text-center font-bold text-gray-900 dark:text-black my-5">
+      <section className="mt-16 pb-5 dark:bg-gray-900">
+        <h1 className=" text-4xl text-center font-bold text-gray-900 dark:text-white my-5">
           Search song lyrics
         </h1>
 
