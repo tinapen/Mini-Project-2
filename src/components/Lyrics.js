@@ -1,6 +1,6 @@
 export const Lyrics = ({ track, songby, lyrics }) => {
   return (
-    <div className="h-[70vh] dark:text-white">
+    <div className="h-[70vh] dark:text-black">
       <br />
       <div className="text-4xl text-center font-bold">{track}</div>
       <br />

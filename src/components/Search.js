@@ -1,4 +1,5 @@
 import Axios from "axios";
+
 export const Search = ({
   artistName,
   setArtistName,
