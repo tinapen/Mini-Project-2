@@ -2,11 +2,12 @@ import { useState } from "react";
 import { ColorRing } from "react-loader-spinner";
 
 export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
+  //variables
   const [songTitle, setSongTitle] = useState("");
   const [songby, setSongby] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  //functions
   const searchLyrics = async () => {
     try {
       setIsLoading(true);
