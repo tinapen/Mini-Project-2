@@ -1,28 +1,20 @@
-import { useState } from "react";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Lyrics } from "./components/Lyrics";
-import { Preview } from "./components/Preview";
+import { Home } from "./Pages/Home";
+import { About } from "./Pages/About";
+import { Contact } from "./Pages/Contact";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
-  const [artistName, setArtistName] = useState("");
-  const [track, setTrack] = useState("");
-
   return (
     <>
-      <Header />
-      <Lyrics
-        artistName={artistName}
-        setArtistName={setArtistName}
-        setTrack={setTrack}
-        track={track}
-      />
-
-      <Preview artistName={artistName} track={track} />
-
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </>
   );
 }

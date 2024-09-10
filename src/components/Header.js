@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header>
-      <nav className="fixed top-0 left-0 w-full bg-white border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className="fixed top-0 left-0 w-full bg-white border-gray-200 dark:bg-gray-900 drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)]">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
           <Link
-            to="*"
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <svg
@@ -26,6 +26,23 @@ export const Header = () => {
               Lyrix
             </span>
           </Link>
+          <ul className="flex flex-wrap items-center mt-3 text-lg font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+              <Link to="/" className="hover:underline me-4 md:me-6">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:underline me-4 md:me-6">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:underline">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

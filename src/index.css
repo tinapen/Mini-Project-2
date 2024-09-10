@@ -11,9 +11,10 @@
   }
 }
 
-#lyrics {
-  height: 80h;
+#home {
+  height: 100vh;
 }
-#preview {
-  height: 10vh;
+
+#about {
+  height: 100vh;
 }

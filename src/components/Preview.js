@@ -26,18 +26,19 @@ export const Preview = ({ track, artistName }) => {
   };
 
   return (
-    <div id="preview" className="bg-white">
-      <div className=" ms-[160px] flex mt-[195px] ">
+    <div
+      id="preview"
+      className="container bg-white border-gray-200 dark:bg-gray-800"
+    >
+      <div className=" ms-[160px] flex">
         <button
           onClick={getPreview}
           type="button"
-          class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
+          className="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
         >
           Click here to enable song preview
         </button>
-        <div className="ms-5 text-red-500 bg-white font-bold">
-          {previewPrompt}
-        </div>
+        <div className="ms-5 text-red-500 font-bold">{previewPrompt}</div>
       </div>
       <div id="audio-container" className="justify-center align-center flex">
         <audio className="w-[80vw]" src={previewURL} controls></audio>
