@@ -4,12 +4,11 @@ export const AboutContent = () => {
   return (
     <>
       <p className="text-justify text-white text-lg">
-        <span className="font-bold text-blue-500"> Lyrix </span>is a fast and
-        simple website that helps you find song lyrics in seconds. Powered by
-        the <span className="font-bold text-blue-500"> lyrics.ovh API</span>, it
+        <span className="font-bold text-blue-500"> Lyrix </span>is a simple
+        website that helps you find song lyrics. Powered by the{" "}
+        <span className="font-bold text-blue-500"> lyrics.ovh API</span>, it
         provides access to a wide range of song lyrics with just a quick search
-        by song title or artist. The lyrics are displayed in a clean,
-        easy-to-read layout. <br />
+        by song title or artist. <br />
         <br /> To use the
         <span className="font-bold text-blue-500"> Lyrix </span>website
         properly, it's important to input the artist name along with the song
