@@ -69,7 +69,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
               id="title-field"
               value={songTitle}
               onChange={handleTitle}
-              className="bg-gray-50 border border-gray-300 text-gray-900 mr-3 text-sm focus:ring-blue-500 focus:border-blue-500 block w-80 ps-10 p-2.5 rounded-l-lg dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+              className="bg-gray-50 border border-gray-300 text-gray-900 mr-3 text-sm focus:ring-blue-500 focus:border-blue-500 block w-80 ps-10 p-2.5 rounded-r-lg dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
               placeholder="Song Title..."
               required
             />
