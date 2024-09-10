@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ColorRing } from "react-loader-spinner";
+
 export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   const [songTitle, setSongTitle] = useState("");
   const [songby, setSongby] = useState("");

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 export const Preview = ({ track, artistName }) => {
+  // variables
   const [previewURL, setPreviewURL] = useState("");
   const [previewPrompt, setPreviewPrompt] = useState("");
-
+  //functions
   const getPreview = async () => {
     try {
       const response = await fetch(
