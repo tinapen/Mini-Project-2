@@ -53,7 +53,7 @@ export const Preview = ({ track, artistName }) => {
         {/* Preview promt field  */}
         <div className="ms-5 text-red-500 font-bold">{previewPrompt}</div>
       </div>
-      // Audio output
+      {/* Audio output  */}
       <div id="audio-container" className="justify-center align-center flex">
         <audio className="w-[50vw]" src={previewURL} controls></audio>
       </div>
