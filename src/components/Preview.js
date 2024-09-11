@@ -8,7 +8,7 @@ export const Preview = ({ track, artistName }) => {
   const getPreview = async () => {
     try {
       const response = await fetch(
-        `https://v1.nocodeapi.com/tinapen/spotify/FQJFuqFlvKmFSqKV/search?q=${track}&type=track`
+        `https://v1.nocodeapi.com/tina/spotify/iVuNpoMzZtNsuHpU/search?q=${track}&type=track`
       );
       const data = await response.json();
       console.log(data);
