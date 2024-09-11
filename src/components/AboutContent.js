@@ -8,7 +8,7 @@ export const AboutContent = () => {
         website that helps you find song lyrics. Powered by the{" "}
         <span className="font-bold text-blue-500"> lyrics.ovh API</span>, it
         provides access to a wide range of song lyrics with just a quick search
-        by song title or artist. <br />
+        by song title and artist. <br />
         <br /> To use the
         <span className="font-bold text-blue-500"> Lyrix </span>website
         properly, it's important to input the artist name along with the song
