@@ -6,6 +6,7 @@ export const Preview = ({ track, artistName }) => {
   const [previewPrompt, setPreviewPrompt] = useState("");
   //functions
   const getPreview = async () => {
+    // Fetching API
     try {
       const response = await fetch(
         `https://v1.nocodeapi.com/tina/spotify/iVuNpoMzZtNsuHpU/search?q=${track}&type=track`
@@ -13,8 +14,9 @@ export const Preview = ({ track, artistName }) => {
       const data = await response.json();
       console.log(data);
 
+      // song preview url
       setPreviewURL(data.tracks.items[0].preview_url);
-
+      // test if there is a song preview
       if (previewURL === "") {
         setPreviewPrompt(
           `Song preview for ${track} by ${artistName.toUpperCase()}`
@@ -27,6 +29,7 @@ export const Preview = ({ track, artistName }) => {
         console.log(previewURL);
       }
     } catch (error) {
+      //if api response is not OK
       console.error(error.message);
       setPreviewURL("");
       setPreviewPrompt(">> There is a problem occured");
@@ -39,6 +42,7 @@ export const Preview = ({ track, artistName }) => {
       className="container bg-white border-gray-200 dark:bg-gray-800"
     >
       <div className=" ms-[370px] flex">
+        {/* Preview promt button */}
         <button
           onClick={getPreview}
           type="button"
@@ -46,8 +50,10 @@ export const Preview = ({ track, artistName }) => {
         >
           Click here to enable song preview
         </button>
+        {/* Preview promt field  */}
         <div className="ms-5 text-red-500 font-bold">{previewPrompt}</div>
       </div>
+      // Audio output
       <div id="audio-container" className="justify-center align-center flex">
         <audio className="w-[50vw]" src={previewURL} controls></audio>
       </div>

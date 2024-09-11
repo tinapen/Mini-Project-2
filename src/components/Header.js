@@ -5,6 +5,7 @@ export const Header = () => {
     <header>
       <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-500 dark:bg-gray-900 drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)]">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
+          {/* Note Logo, that will redirects to Home page once click */}
           <Link
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -21,22 +22,25 @@ export const Header = () => {
                 clipRule="evenodd"
               />
             </svg>
-
+            {/* Site Logo Name  */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Lyrix
             </span>
           </Link>
           <ul className="flex flex-wrap items-center mt-3 text-lg font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            {/* Home page link  */}
             <li>
               <Link to="/" className="hover:underline me-4 md:me-6">
                 Home
               </Link>
             </li>
+            {/* About page link  */}
             <li>
               <Link to="/about" className="hover:underline me-4 md:me-6">
                 About
               </Link>
             </li>
+            {/* Contact page link  */}
             <li>
               <Link to="/contact" className="hover:underline">
                 Contact

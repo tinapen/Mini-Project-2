@@ -10,33 +10,43 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   //functions
   const searchLyrics = async () => {
     try {
+      // Loader/Spinner while fetching API
       setIsLoading(true);
+      // Fetching API
       const response = await fetch(
         `https://api.lyrics.ovh/v1/${artistName}/${songTitle}`
       );
+      // Loader/Spinner will disappear once the data has already fetched
       setIsLoading(false);
       const data = await response.json();
+      //Console log for testing purposes
       console.log(data);
+      // Lyrics data
       setLyrics(data.lyrics);
+      // Song title to load in the page, it just catches users input for song title
       setTrack(songTitle.toUpperCase());
+      //Artist name to be loaded in the page, it just catches users input for the artist name, and then converted to uppercase
       setSongby(`Song by: ${artistName.toUpperCase()}`);
     } catch (error) {
+      // error page
       console.log(error.message);
+      //spinner will disappear once an error message thrown
       setIsLoading(false);
+      //Error message
       setLyrics(
         `No Lyrics Found \n Sorry, lyrics for ${songTitle}, song by ${artistName} is unavailable. Also, check if the title and artist are correct.`
       );
     }
   };
-
+  //Preventing default submission
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
+  //handles User input for song title
   const handleTitle = (e) => {
     setSongTitle(e.target.value);
   };
-
+  //handles User input for the artist
   const handleArtistName = (e) => {
     setArtistName(e.target.value);
   };
@@ -85,11 +95,13 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
         </form>
       </div>
       <div id="lyrics-container">
+        {/* Used a ternary operator to test if the spinner will load or not*/}
         {isLoading ? (
           <div
             id="loader-container"
             className="flex align-center justify-center m-[21vh]"
           >
+            {/* ColorRing React Loader Spinner  */}
             <ColorRing
               visible={true}
               height="80"
@@ -101,6 +113,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
             />
           </div>
         ) : (
+          // Container of lyrics data
           <div id="lyrics-container" className="h-[420px] dark:text-white">
             <br />
             <div className="text-[40px] text-center font-bold">{track}</div>
