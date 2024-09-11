@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header>
-      <nav className="fixed top-0 left-0 w-full bg-white border-gray-200 dark:bg-gray-900 drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)]">
+      <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-500 dark:bg-gray-900 drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)]">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
           <Link
             to="/"
