@@ -34,7 +34,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       setIsLoading(false);
       //Error message
       setLyrics(
-        `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you.`
+        `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you. `
       );
     }
   };
