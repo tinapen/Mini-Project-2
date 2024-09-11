@@ -41,7 +41,7 @@ export const Preview = ({ track, artistName }) => {
       id="preview"
       className="container bg-white border-gray-200 dark:bg-gray-800"
     >
-      <div className=" ms-[370px] flex">
+      <div className=" ms-[370px] flex ">
         {/* Preview promt button */}
         <button
           onClick={getPreview}
@@ -55,7 +55,11 @@ export const Preview = ({ track, artistName }) => {
       </div>
       {/* Audio output  */}
       <div id="audio-container" className="justify-center align-center flex">
-        <audio className="w-[50vw]" src={previewURL} controls></audio>
+        <audio
+          className="w-[50vw] mb-[100px]"
+          src={previewURL}
+          controls
+        ></audio>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       setIsLoading(false);
       //Error message
       setLyrics(
-        `No Lyrics Found \n Sorry, lyrics for ${songTitle}, song by ${artistName} is unavailable. Also, check if the title and artist are correct.`
+        `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title.`
       );
     }
   };
@@ -99,7 +99,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
         {isLoading ? (
           <div
             id="loader-container"
-            className="flex align-center justify-center m-[21vh]"
+            className="flex align-center justify-center m-[20vh]"
           >
             {/* ColorRing React Loader Spinner  */}
             <ColorRing
@@ -114,13 +114,13 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
           </div>
         ) : (
           // Container of lyrics data
-          <div id="lyrics-container" className="h-[420px] dark:text-white">
+          <div id="lyrics-container" className="h-[400px] dark:text-white">
             <br />
             <div className="text-[40px] text-center font-bold">{track}</div>
             <br />
             <div className="text-center">{songby}</div>
             <br />
-            <pre className="text-xl text-center h-[260px] overflow-auto font-sans font-medium">
+            <pre className="text-xl text-center h-[200px] overflow-auto font-sans font-medium">
               {lyrics}
             </pre>
           </div>
