@@ -12,14 +12,22 @@ export const Preview = ({ track, artistName }) => {
       );
       const data = await response.json();
       console.log(data);
+
       setPreviewURL(data.tracks.items[0].preview_url);
-      setPreviewPrompt(`Song preview for ${track}`);
-      if (previewURL === null) {
-        setPreviewPrompt(`>> No track preview for ${track} by ${artistName}`);
+
+      if (previewURL === "") {
+        setPreviewPrompt(
+          `Song preview for ${track} by ${artistName.toUpperCase()}`
+        );
+        console.log(previewURL);
+      } else if (previewURL === null) {
+        setPreviewPrompt(
+          `>> No track preview for ${track} by ${artistName.toUpperCase()}`
+        );
         console.log(previewURL);
       }
     } catch (error) {
-      console.log("No Preview");
+      console.error(error.message);
       setPreviewURL("");
       setPreviewPrompt(">> There is a problem occured");
     }
@@ -30,7 +38,7 @@ export const Preview = ({ track, artistName }) => {
       id="preview"
       className="container bg-white border-gray-200 dark:bg-gray-800"
     >
-      <div className=" ms-[160px] flex">
+      <div className=" ms-[370px] flex">
         <button
           onClick={getPreview}
           type="button"
@@ -41,7 +49,7 @@ export const Preview = ({ track, artistName }) => {
         <div className="ms-5 text-red-500 font-bold">{previewPrompt}</div>
       </div>
       <div id="audio-container" className="justify-center align-center flex">
-        <audio className="w-[80vw]" src={previewURL} controls></audio>
+        <audio className="w-[50vw]" src={previewURL} controls></audio>
       </div>
     </div>
   );
