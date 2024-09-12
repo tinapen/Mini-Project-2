@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 export const ContactField = () => {
   return (
     <>
-      <div className="body-font bg-gray-800 text-gray-400">
+      <div className="body-font bg-gray-50 dark:bg-gray-800 text-black dark:text-gray-400">
         <div className="container mx-auto px-5 py-20">
           <div className="mb-12 flex w-full flex-col text-center">
-            <h1 className="title-font mb-4 text-2xl font-medium text-white sm:text-3xl">
+            <h1 className="title-font mb-4 text-2xl font-medium text-black dark:text-white sm:text-3xl">
               Contact Us
             </h1>
             <p className="mx-auto text-base leading-relaxed lg:w-2/3">
@@ -24,12 +24,12 @@ export const ContactField = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="peer w-full rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer w-full rounded border border-gray-800 dark:border-gray-500 dark:bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 dark:text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-100 dark:focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Name"
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 dark:peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
                   >
                     Name
                   </label>
@@ -41,12 +41,12 @@ export const ContactField = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="peer w-full rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer w-full rounded border border-gray-800 dark:border-gray-500 dark:bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 dark:text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-100 dark:focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Email"
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 dark:peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
                   >
                     Email
                   </label>
@@ -57,12 +57,12 @@ export const ContactField = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="peer h-32 w-full resize-none rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer h-32 w-full resize-none rounded border border-gray-500 dark:bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-100 dark:focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Message"
                   ></textarea>
                   <label
                     htmlFor="message"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-blue-500 transition-all peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 dark:peer-placeholder-shown:bg-gray-800 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-blue-500"
                   >
                     Message
                   </label>

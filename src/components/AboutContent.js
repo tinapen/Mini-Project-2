@@ -3,7 +3,7 @@ import React from "react";
 export const AboutContent = () => {
   return (
     <>
-      <p className="text-justify text-white text-lg">
+      <p className="text-justify text-black dark:text-white text-lg">
         <span className="font-bold text-blue-500"> Lyrix </span>is a simple
         website that helps you find song lyrics. Powered by the{" "}
         <span className="font-bold text-blue-500"> lyrics.ovh API</span>, it
