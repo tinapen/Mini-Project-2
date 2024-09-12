@@ -7,6 +7,8 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   const [songby, setSongby] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
   //functions
   const searchLyrics = async () => {
     try {
@@ -16,22 +18,23 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       const response = await fetch(
         `https://api.lyrics.ovh/v1/${artistName}/${songTitle}`
       );
-      // Loader/Spinner will disappear once the data has already fetched
+
       setIsLoading(false);
+
       const data = await response.json();
-      //Console log for testing purposes
+
       console.log(data);
-      // Lyrics data
+
       setLyrics(data.lyrics);
-      // Song title to load in the page, it just catches users input for song title
+
       setTrack(songTitle.toUpperCase());
-      //Artist name to be loaded in the page, it just catches users input for the artist name, and then converted to uppercase
+
       setSongby(`Song by: ${artistName.toUpperCase()}`);
     } catch (error) {
-      console.log(error.message);
-      //spinner will disappear once an error message thrown
+      console.log(error);
+
       setIsLoading(false);
-      //Error message
+
       setLyrics(
         `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you. `
       );
@@ -49,7 +52,19 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   const handleArtistName = (e) => {
     setArtistName(e.target.value);
   };
-
+  //Event Listener for Search and Reset button
+  const toggleSearchBtn = () => {
+    setIsClicked(!isClicked);
+  };
+  //Reset Function
+  const resetLyrics = () => {
+    setArtistName("");
+    setSongTitle("");
+    setTrack("");
+    setSongby("");
+    setLyrics("");
+    setIsLoading(false);
+  };
   return (
     <div id="lyrics">
       <div
@@ -86,13 +101,26 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
               required
             />
           </div>
-          <button
-            type="submit"
-            id="search-btn"
-            onClick={searchLyrics}
-            className="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Search
+          <button onClick={toggleSearchBtn}>
+            {isClicked ? (
+              <span
+                type="submit"
+                id="reset-btn"
+                onClick={resetLyrics}
+                className="p-2.5 ms-2 text-sm font-medium text-white bg-indigo-600 rounded-lg border border-indigo-700 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+              >
+                RESET
+              </span>
+            ) : (
+              <span
+                type="submit"
+                id="search-btn"
+                onClick={searchLyrics}
+                className="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                SEARCH
+              </span>
+            )}
           </button>
         </form>
       </div>
