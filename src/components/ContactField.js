@@ -76,7 +76,7 @@ export const ContactField = () => {
 
               {/* <!-- footer --> */}
               <div className="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center">
-                <Link className="text-blue-400">
+                <Link className="text-blue-600 dark:text-blue-400">
                   wd103p.mp2.lyrix@email.com
                 </Link>
                 <p className="my-5 leading-normal">
