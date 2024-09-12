@@ -24,7 +24,7 @@ export const ContactField = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer w-full rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Name"
                   />
                   <label
@@ -41,7 +41,7 @@ export const ContactField = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer w-full rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Email"
                   />
                   <label
@@ -57,7 +57,7 @@ export const ContactField = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
+                    className="peer h-32 w-full resize-none rounded border border-gray-500 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900"
                     placeholder="Message"
                   ></textarea>
                   <label
@@ -69,7 +69,7 @@ export const ContactField = () => {
                 </div>
               </div>
               <div className="w-full p-2">
-                <button className="mx-auto flex rounded border-0 bg-blue-500 py-2 px-8 text-lg text-white hover:bg-blue-600 focus:outline-none">
+                <button className="mx-auto flex rounded border-0 bg-blue-600 py-2 px-8 text-lg text-white hover:bg-blue-700 focus:outline-none">
                   SUBMIT
                 </button>
               </div>

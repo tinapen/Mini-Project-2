@@ -57,7 +57,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
         <h1 className=" text-4xl text-center font-bold pt-4 text-gray-900 dark:text-white my-5">
           Search Song Lyrics
         </h1>
-
+        {/* Search Form  */}
         <form
           className="flex justify-center max-w-sm mx-auto"
           onSubmit={handleSubmit}
@@ -94,6 +94,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
           </button>
         </form>
       </div>
+      {/* Lyrics container  */}
       <div id="lyrics-container">
         {/* Used a ternary operator to test if the spinner will load or not*/}
         {isLoading ? (
