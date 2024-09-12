@@ -18,11 +18,9 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       const response = await fetch(
         `https://api.lyrics.ovh/v1/${artistName}/${songTitle}`
       );
-
-      setIsLoading(false);
-
       const data = await response.json();
 
+      setIsLoading(false);
       console.log(data);
 
       setLyrics(data.lyrics);
@@ -34,10 +32,13 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       console.log(error);
 
       setIsLoading(false);
-
-      setLyrics(
-        `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you. `
-      );
+      if (artistName == "" || songTitle == "") {
+        setLyrics("Please enter artist name and song title");
+      } else {
+        setLyrics(
+          `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you. `
+        );
+      }
     }
   };
   //Preventing default submission
@@ -58,12 +59,13 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   };
   //Reset Function
   const resetLyrics = () => {
-    setArtistName("");
-    setSongTitle("");
-    setTrack("");
-    setSongby("");
-    setLyrics("");
-    setIsLoading(false);
+    // setArtistName("");
+    // setSongTitle("");
+    // setTrack("");
+    // setSongby("");
+    // setLyrics("");
+    // setIsLoading(false);
+    window.location.reload();
   };
   return (
     <div id="lyrics">
