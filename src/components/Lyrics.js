@@ -28,7 +28,6 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       //Artist name to be loaded in the page, it just catches users input for the artist name, and then converted to uppercase
       setSongby(`Song by: ${artistName.toUpperCase()}`);
     } catch (error) {
-      // error page
       console.log(error.message);
       //spinner will disappear once an error message thrown
       setIsLoading(false);
