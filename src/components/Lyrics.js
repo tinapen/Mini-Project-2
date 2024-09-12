@@ -32,7 +32,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
       console.log(error);
 
       setIsLoading(false);
-      if (artistName == "" || songTitle == "") {
+      if (artistName === "" || songTitle === "") {
         setLyrics("Please enter artist name and song title");
       } else {
         setLyrics(
