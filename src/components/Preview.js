@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Preview = ({ track, artistName, songTitle }) => {
+export const Preview = ({ track }) => {
   // variables
   const [previewURL, setPreviewURL] = useState("");
   const [previewPrompt, setPreviewPrompt] = useState("");
