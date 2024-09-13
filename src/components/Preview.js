@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export const Preview = ({ track, artistName }) => {
+export const Preview = ({ track, artistName, songTitle }) => {
   // variables
   const [previewURL, setPreviewURL] = useState("");
   const [previewPrompt, setPreviewPrompt] = useState("");
+  const [clickedPreviewBtn, setClickedPreviewBtn] = useState(false);
 
   //functions
   const getPreview = async () => {
@@ -33,19 +34,39 @@ export const Preview = ({ track, artistName }) => {
       //if api response is not OK
       console.error(error.message);
       setPreviewURL("");
-      setPreviewPrompt(">> There is a problem occured");
+      setPreviewPrompt(`>> There is a problem occured. (No song preview)`);
     }
   };
 
+  const togglePreviewBtn = () => {
+    setClickedPreviewBtn(!clickedPreviewBtn);
+  };
+
+  const resetPreview = () => {
+    setPreviewPrompt("");
+    setPreviewURL("");
+  };
   return (
     <div className="bg-gray-50 dark:bg-gray-800 w-[100vw] h-[20vh] px-[25%]">
       <div id="preview-btn-prompt" className="flex">
-        <button
-          onClick={getPreview}
-          type="button"
-          className="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
-        >
-          Click here to enable song preview
+        <button onClick={togglePreviewBtn}>
+          {clickedPreviewBtn ? (
+            <span
+              onClick={resetPreview}
+              type="button"
+              className="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
+            >
+              Reset song preview and prompt
+            </span>
+          ) : (
+            <span
+              onClick={getPreview}
+              type="button"
+              className="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2"
+            >
+              Click here to enable song preview
+            </span>
+          )}
         </button>
         <div className="ms-5 text-red-500 font-bold">{previewPrompt}</div>
       </div>

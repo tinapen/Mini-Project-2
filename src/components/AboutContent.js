@@ -20,12 +20,15 @@ export const AboutContent = () => {
         song as you follow along with the lyrics. This feature is provided via
         <span className="font-bold text-blue-500"> NoCodeAPI</span>. <br />{" "}
         <br />
-        <span className="font-bold text-white">Please note</span>: Some songs
-        may not have lyrics available, as they might not be supported or found
-        in the <span className="font-bold text-blue-500"> lyrics.ovh </span>{" "}
-        database. Additionally, not all songs will have a preview, and
-        occasionally, the song preview might not match the lyrics due to title
-        mismatches or missing data.
+        <span className="font-bold text-black dark:text-white">
+          Please note
+        </span>
+        : Some songs may not have lyrics available, as they might not be
+        supported or found in the{" "}
+        <span className="font-bold text-blue-500"> lyrics.ovh </span> database.
+        Additionally, not all songs will have a preview, and occasionally, the
+        song preview might not match the lyrics due to title mismatches or
+        missing data.
       </p>
     </>
   );

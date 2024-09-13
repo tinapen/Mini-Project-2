@@ -6,6 +6,7 @@ import { Footer } from "../components/Footer";
 
 export const Home = () => {
   const [artistName, setArtistName] = useState("");
+  const [songTitle, setSongTitle] = useState("");
   const [track, setTrack] = useState("");
 
   return (
@@ -17,8 +18,15 @@ export const Home = () => {
         setTrack={setTrack}
         track={track}
         className="bg-gray-800"
+        songTitle={songTitle}
+        setSongTitle={setSongTitle}
       />
-      <Preview artistName={artistName} track={track} />
+      <Preview
+        artistName={artistName}
+        track={track}
+        songTitle={songTitle}
+        setSongTitle={setSongTitle}
+      />
       <Footer />
     </div>
   );

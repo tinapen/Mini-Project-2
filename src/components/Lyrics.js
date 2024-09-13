@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { ColorRing } from "react-loader-spinner";
 
-export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
+export const Lyrics = ({
+  artistName,
+  setArtistName,
+  songTitle,
+  setSongTitle,
+  track,
+  setTrack,
+}) => {
   //variables
-  const [songTitle, setSongTitle] = useState("");
+
   const [songby, setSongby] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -14,30 +21,28 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
     try {
       // Loader/Spinner while fetching API
       setIsLoading(true);
-      // Fetching API
-      const response = await fetch(
-        `https://api.lyrics.ovh/v1/${artistName}/${songTitle}`
-      );
+      // Fetching
+      const response = await Promise.race([
+        fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`),
+        new Promise((resolve, reject) => {
+          // Reject after 5 seconds
+          setTimeout(() => reject(new Error("Request timed out")), 5000);
+        }),
+      ]);
+
       const data = await response.json();
 
       setIsLoading(false);
-      console.log(data);
-
       setLyrics(data.lyrics);
-
       setTrack(songTitle.toUpperCase());
-
       setSongby(`Song by: ${artistName.toUpperCase()}`);
     } catch (error) {
       console.log(error);
-
       setIsLoading(false);
       if (artistName === "" || songTitle === "") {
-        setLyrics("Please enter artist name and song title");
+        setLyrics("Please enter artist name and/or song title");
       } else {
-        setLyrics(
-          `No Lyrics Found \n Sorry, lyrics is unavailable. Also, check if the title and artist are correct. And please ensure that you really typed in the artist and the song title. \n Thank you. `
-        );
+        setLyrics(`Sorry, lyrics is unavailable`);
       }
     }
   };
@@ -49,7 +54,7 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   const handleTitle = (e) => {
     setSongTitle(e.target.value);
   };
-  //handles User input for the artist
+  //handles User input for the artist name
   const handleArtistName = (e) => {
     setArtistName(e.target.value);
   };
@@ -59,12 +64,6 @@ export const Lyrics = ({ artistName, setArtistName, track, setTrack }) => {
   };
   //Reset Function
   const resetLyrics = () => {
-    // setArtistName("");
-    // setSongTitle("");
-    // setTrack("");
-    // setSongby("");
-    // setLyrics("");
-    // setIsLoading(false);
     window.location.reload();
   };
   return (

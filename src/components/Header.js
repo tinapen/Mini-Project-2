@@ -50,12 +50,12 @@ export const Header = () => {
               onClick={() => setDarkMode(!darkMode)}
               data-tooltip-target="navbar-search-example-toggle-dark-mode-tooltip"
               type="button"
-              data-toggle-dark="light"
-              className="flex items-center p-2 mr-5 text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              data-toggle-dark="dark"
+              className="flex items-center p-2 mr-5 text-xs font-medium text-gray-50 bg-gray-800 rounded-lg border border-gray-600 toggle-dark-state-example hover:bg-gray-700 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
             >
               {darkMode ? (
                 <svg
-                  className="w-[20px] h-[20px] text-gray-800 dark:text-white"
+                  className="w-[20px] h-[20px] text-white dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -71,7 +71,7 @@ export const Header = () => {
                 </svg>
               ) : (
                 <svg
-                  className="w-[20px] h-[20px] text-gray-800 dark:text-white"
+                  className="w-[20px] h-[20px] text-white dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
