@@ -19,7 +19,7 @@ export const Preview = ({ track, artistName, songTitle }) => {
       // song preview url
       setPreviewURL(data.tracks.items[0].preview_url);
       // test if there is a song preview
-      if (previewURL === "") {
+      if (!previewURL === "") {
         setPreviewPrompt(
           `Song preview for ${track} by ${artistName.toUpperCase()}`
         );
