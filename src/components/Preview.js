@@ -18,17 +18,15 @@ export const Preview = ({ track, artistName, songTitle }) => {
 
       // song preview url
       setPreviewURL(data.tracks.items[0].preview_url);
-      // test if there is a song preview
-      if (!previewURL === "") {
+
+      console.log(typeof previewURL);
+
+      if (previewURL === null || previewURL === "null") {
+        setPreviewPrompt(`No song preview`);
+      } else if (!previewURL === null || !previewURL === "null") {
         setPreviewPrompt(
-          `Song preview for ${track} by ${artistName.toUpperCase()}`
+          `Song preview for ${songTitle.toUpperCase()} by ${artistName.toUpperCase()}`
         );
-        console.log(previewURL);
-      } else if (previewURL === null) {
-        setPreviewPrompt(
-          `>> No track preview for ${track} by ${artistName.toUpperCase()}`
-        );
-        console.log(previewURL);
       }
     } catch (error) {
       //if api response is not OK
