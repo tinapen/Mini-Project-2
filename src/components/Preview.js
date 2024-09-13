@@ -23,7 +23,8 @@ export const Preview = ({ track, artistName, songTitle }) => {
 
       if (previewURL === null || previewURL === "null") {
         setPreviewPrompt(`No song preview`);
-      } else if (!previewURL === null || !previewURL === "null") {
+      }
+      if (!previewURL === null || !previewURL === "null") {
         setPreviewPrompt(
           `Song preview for ${songTitle.toUpperCase()} by ${artistName.toUpperCase()}`
         );
