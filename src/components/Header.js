@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   const activeLink = "text-blue-500";
-  const inactiveLink = "text-gray-500";
+  const inactiveLink = "text-white";
 
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
