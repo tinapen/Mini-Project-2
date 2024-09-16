@@ -46,6 +46,7 @@ export const Header = () => {
             </span>
           </NavLink>
           <ul className="flex flex-wrap items-center mt-3 text-lg font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            {/* Dark Mode toggle button  */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               data-tooltip-target="navbar-search-example-toggle-dark-mode-tooltip"

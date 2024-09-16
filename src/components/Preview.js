@@ -22,7 +22,7 @@ export const Preview = ({ track }) => {
       //if api response is not OK
       console.error(error.message);
       setPreviewURL("");
-      setPreviewPrompt(`>>No Preview`);
+      setPreviewPrompt(`>>Problem occured,please try again`);
     }
   };
 
